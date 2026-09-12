@@ -1,50 +1,115 @@
+
 ---
+import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
 ---
 
-<!doctype html>
-<html lang="en">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
-	<body>
-		<Header />
-		<main>
-			<h1>🧑‍🚀 Hello, yanika snack!</h1>
-			<p>
-				Welcome to the official <a href="https://astro.build/">Astro</a> blog starter template. This
-				template serves as a lightweight, minimally-styled starting point for anyone looking to build
-				a personal website, blog, or portfolio with Astro.
-			</p>
-			<p>
-				This template comes with a few integrations already configured in your
-				<code>astro.config.mjs</code> file. You can customize your setup with
-				<a href="https://astro.build/integrations">Astro Integrations</a> to add tools like Tailwind,
-				React, or Vue to your project.
-			</p>
-			<p>Here are a few ideas on how to get started with the template:</p>
-			<ul>
-				<li>Edit this page in <code>src/pages/index.astro</code></li>
-				<li>Edit the site header items in <code>src/components/Header.astro</code></li>
-				<li>Add your name to the footer in <code>src/components/Footer.astro</code></li>
-				<li>Check out the included blog posts in <code>src/content/blog/</code></li>
-				<li>Customize the blog post page layout in <code>src/layouts/BlogPost.astro</code></li>
-			</ul>
-			<p>
-				Have fun! If you get stuck, remember to <a href="https://docs.astro.build/"
-					>read the docs
-				</a> or <a href="https://astro.build/chat">join us on Discord</a> to ask questions.
-			</p>
-			<p>
-				Looking for a blog template with a bit more personality? Check out <a
-					href="https://github.com/Charca/astro-blog-template"
-					>astro-blog-template
-				</a> by <a href="https://twitter.com/Charca">Maxi Ferreira</a>.
-			</p>
-		</main>
-		<Footer />
-	</body>
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <style is:global>
+      * {margin:0; padding:0; box-sizing:border-box; font-family:system-ui, sans-serif;}
+      .hero {background:#d32f2f; color:white; padding:2.5rem 1rem; text-align:center;}
+      nav {background:#f5f5f5; padding:1rem; text-align:center; position:sticky; top:0;}
+      nav a {margin:0 .8rem; color:#333; text-decoration:none; font-weight:500;}
+      .container {max-width:1000px; margin:0 auto; padding:2rem 1rem;}
+      h2 {color:#d32f2f; border-bottom:2px solid #f0f0f0; padding-bottom:.5rem; margin-bottom:1rem;}
+      .produk-grid {display:grid; grid-template-columns:repeat(auto-fill, minmax(220px, 1fr)); gap:1rem;}
+      .produk-card {border:1px solid #eee; border-radius:8px; padding:1rem;}
+      .nama {font-weight:600;}
+      .harga {color:#d32f2f; font-weight:700; margin-top:.3rem;}
+      .promo {background:#fff3e0; border-left:4px solid #ff6f00; padding:1rem; margin:1.5rem 0; border-radius:4px;}
+      .kontak-box {background:#f9f9f9; padding:1.5rem; border-radius:8px;}
+      footer {background:#333; color:white; text-align:center; padding:2rem; margin-top:2rem;}
+    </style>
+  </head>
+  <body>
+    <Header />
+
+    <section class="hero">
+      <h1>🏪 Yanika Snack</h1>
+      <p>Oleh-Oleh & Camilan Khas Bandung — Enak, Murah, Terpercaya</p>
+    </section>
+
+    <nav>
+      <a href="#beranda">Beranda</a>
+      <a href="#produk">Produk</a>
+      <a href="#kategori">Kategori</a>
+      <a href="#kontak">Kontak</a>
+    </nav>
+
+    <main class="container">
+      <section id="beranda">
+        <h2>🔥 Selamat Datang</h2>
+        <p>Kami menyediakan berbagai macam camilan, kue kering, keripik, dan oleh-oleh khas Bandung dengan kualitas terbaik.</p>
+        <div class="promo">
+          <strong>🔥 PROMO SPESIAL!</strong><br>
+          Tanyakan langsung ke kami untuk info diskon & paket terbaru!
+        </div>
+      </section>
+
+      <section id="produk">
+        <h2>⭐ Produk Pilihan</h2>
+        <div class="produk-grid">
+          <div class="produk-card">
+            <div class="nama">Bagelen Lily Butter</div>
+            <div class="harga">Rp 76.500</div>
+          </div>
+          <div class="produk-card">
+            <div class="nama">Mie Gulung Asin</div>
+            <div class="harga">Rp 73.500</div>
+          </div>
+          <div class="produk-card">
+            <div class="nama">Mie Gulung Pedas</div>
+            <div class="harga">Rp 73.500</div>
+          </div>
+          <div class="produk-card">
+            <div class="nama">Singkong Keju Bal</div>
+            <div class="harga">Rp 78.500</div>
+          </div>
+          <div class="produk-card">
+            <div class="nama">Wafer Mini Susu Grafita</div>
+            <div class="harga">Rp 101.500</div>
+          </div>
+          <div class="produk-card">
+            <div class="nama">Sus Vanilla Micky</div>
+            <div class="harga">Rp 97.500</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="kategori">
+        <h2>📂 Kategori Produk</h2>
+        <ul style="columns:2; gap:1rem; list-style:none;">
+          <li>✅ Kue Kering</li>
+          <li>✅ Keripik</li>
+          <li>✅ Kerupuk</li>
+          <li>✅ Wafer & Coklat</li>
+          <li>✅ Dodol</li>
+          <li>✅ Permen & Jelly</li>
+          <li>✅ Kacang</li>
+          <li>✅ Cemilan Manis</li>
+        </ul>
+      </section>
+
+      <section id="kontak">
+        <h2>📍 Lokasi & Kontak</h2>
+        <div class="kontak-box">
+          <p><strong>Yanika Snack & Oleh-Oleh Bandung</strong></p>
+          <p>Jl. Sukasari II No.70, Sadang Serang, Kec. Coblong, Kota Bandung, Jawa Barat 40133</p>
+          <p style="margin-top:.5rem;">📞 WhatsApp: <a href="https://wa.me/6285721349673" target="_blank" style="color:#d32f2f; font-weight:600;">+62 857-2134-9673</a></p>
+          <p style="margin-top:.5rem;">🕐 Jam Buka: 08.00 – 17.00</p>
+        </div>
+      </section>
+    </main>
+
+    <Footer />
+  </body>
 </html>
+
+
+Pada Sab, 12 Sep 2026, 07.22, True Colour <colourtrue266@gmail.com> menulis:
+https://triwandisnack1.pages.dev
